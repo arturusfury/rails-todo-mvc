@@ -1,0 +1,36 @@
+<section class="todoapp">
+	<header class="header">
+		<h1><%= link_to 'todos', '/' %></h1>
+		<input class="new-todo" placeholder="what needs to be done?" autofocus="">
+	</header>
+
+	<section class="main" style="display: block;">
+		<input class="toggle-all" type="checkbox">
+		<label for="toggle-all">Mark all as complete</label>
+		<ul class="todo-list">
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>todo item</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+    </ul>
+	</section>
+
+	<footer class="footer" style="display: block;">
+		<span class="todo-count"><strong>1</strong> item left</span>
+		<ul class="filters">
+			<li>
+				<a href="#/" class="selected">All</a>
+			</li>
+			<li>
+				<a href="#/active">Active</a>
+			</li>
+			<li>
+				<a href="#/completed">Completed</a>
+			</li>
+		</ul>
+		<button class="clear-completed" style="display: none;"></button>
+	</footer>
+</section>

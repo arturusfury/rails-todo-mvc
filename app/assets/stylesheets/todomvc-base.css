@@ -83,6 +83,11 @@ input[type="checkbox"] {
 	text-rendering: optimizeLegibility;
 }
 
+.todoapp h1 a {
+  text-decoration: none;
+  color: rgba(175, 47, 47, 0.15);
+}
+
 .new-todo,
 .edit {
 	position: relative;
@@ -146,6 +151,11 @@ label[for='toggle-all'] {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+}
+
+.todo-list a {
+  text-decoration: none;
+  color: #4d4d4d;
 }
 
 .todo-list li {
