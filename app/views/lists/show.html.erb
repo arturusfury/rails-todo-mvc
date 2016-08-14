@@ -8,13 +8,15 @@
 		<input class="toggle-all" type="checkbox">
 		<label for="toggle-all">Mark all as complete</label>
 		<ul class="todo-list">
+      <% @items.each do |item| %>
       <li class="">
         <div class="view">
           <input class="toggle" type="checkbox">
-          <label>todo item</label>
+          <label><%= item.name %></label>
           <button class="destroy"></button>
         </div>
       </li>
+      <% end %>
     </ul>
 	</section>
 
