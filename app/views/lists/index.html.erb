@@ -2,12 +2,11 @@
 	<header class="header">
 		<h1><%= link_to 'todos', '/' %></h1>
     <%= form_for(@list) do |f| %>
-      <%= f.text_field :name, class: "new-todo", placeholder: "make a new list", autofocus: true %>
+      <%= f.text_field :name, class: "new-todo", placeholder: @list.errors.full_messages_for(:name).first || 'make a new list', autofocus: true %>
     <% end %>
 	</header>
 
 	<section class="main" style="display: block;">
-
     <ul class="todo-list">
       <% @lists.all.each do |list| %>
       <li class="">

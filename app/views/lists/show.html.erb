@@ -1,7 +1,9 @@
 <section class="todoapp">
 	<header class="header">
 		<h1><%= link_to 'todos', '/' %></h1>
-		<input class="new-todo" placeholder="what needs to be done?" autofocus="">
+    <%= form_for([@list, @item]) do |f| %>
+      <%= f.text_field :name, class: "new-todo", placeholder: @item.errors.full_messages_for(:name).first || "what needs to be done?", autofocus: true %>
+    <% end %>
 	</header>
 
 	<section class="main" style="display: block;">
@@ -21,7 +23,7 @@
 	</section>
 
 	<footer class="footer" style="display: block;">
-		<span class="todo-count"><strong>1</strong> item left</span>
+		<span class="todo-count"><%=@items.count%> item(s)</span>
 		<ul class="filters">
 			<li>
 				<a href="#/" class="selected">All</a>

@@ -1,5 +1,8 @@
 # Lists Controller
 class ListsController < ApplicationController
+  before_action :set_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_items, only: [:show, :edit, :update, :destroy]
+
   # Create
   def create
     @list = List.new(list_params(:name))
@@ -7,6 +10,7 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to @list
     else
+      @lists = List.all
       render :index
     end
   end
@@ -18,8 +22,6 @@ class ListsController < ApplicationController
   end
 
   def show
-    @list = List.find(params[:id])
-    @items = @list.items
   end
 
   # Update
@@ -30,5 +32,14 @@ class ListsController < ApplicationController
 
   def list_params(*args)
     params.require(:list).permit(*args)
+  end
+
+  def set_list
+    @list = List.find(params[:id])
+  end
+
+  def set_items
+    @items = List.find(params[:id]).items
+    @item = @list.items.build # Builds a blank item for our form
   end
 end
