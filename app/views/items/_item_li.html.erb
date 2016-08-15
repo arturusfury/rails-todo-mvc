@@ -3,7 +3,8 @@
     <%= form_for_item_status(item) %>
 
     <label><%= item.name %></label>
-
-    <button class="destroy"></button>
+    <%= form_tag(list_item_path(item.list, item), method: :delete) do %>
+      <button class="destroy"></button>
+    <% end %>
   </div>
 </li>
