@@ -8,13 +8,7 @@
 
 	<section class="main" style="display: block;">
     <ul class="todo-list">
-      <% @lists.all.each do |list| %>
-      <li class="">
-        <div class="view">
-          <label><%= link_to list.name, list_url(list) %></a></label>
-        </div>
-      </li>
-      <% end %>
+      <%= render collection: @lists, partial: 'lists/list_li', as: :list %>
     </ul>
 	</section>
 
