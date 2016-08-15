@@ -40,6 +40,6 @@ class ListsController < ApplicationController
 
   def set_items
     @items = List.find(params[:id]).items
-    @item = @list.items.build # Builds a blank item for our form
+    @item = Item.new # Builds a blank item for our form
   end
 end
